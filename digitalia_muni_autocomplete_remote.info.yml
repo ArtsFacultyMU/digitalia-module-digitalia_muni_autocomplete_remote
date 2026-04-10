@@ -1,0 +1,6 @@
+name: 'Digitalia MUNI Autocomplete Remote'
+type: module
+description: 'Formatter for autocomplete from remote sources'
+package: digitalia
+core_version_requirement: ^10 || ^11
+dependencies:

@@ -1,0 +1,15 @@
+digitalia_muni_autocomplete_remote_orcid.autocomplete:
+  path: '/dm_autocomplete/orcid'
+  defaults:
+    _controller: '\Drupal\digitalia_muni_autocomplete_remote\Controller\JsonApiORCIDController::handleAutocomplete'
+    _format: json
+  requirements:
+    _permission: 'access content'
+
+digitalia_muni_autocomplete_remote_ror.autocomplete:
+  path: '/dm_autocomplete/ror'
+  defaults:
+    _controller: '\Drupal\digitalia_muni_autocomplete_remote\Controller\JsonApiRORController::handleAutocomplete'
+    _format: json
+  requirements:
+    _permission: 'access content'
