@@ -1,0 +1,18 @@
+field.widget.settings.orcid_widget:
+  type: mapping
+  label: "ORCID widget settings"
+  mapping:
+    first_names:
+      type: string
+      label: "First names field machine name"
+    last_names:
+      type: string
+      label: "Last names field machine name"
+
+field.widget.settings.ror_widget:
+  type: mapping
+  label: "ROR widget settings"
+  mapping:
+    org_name:
+      type: string
+      label: "Organization name field machine name"

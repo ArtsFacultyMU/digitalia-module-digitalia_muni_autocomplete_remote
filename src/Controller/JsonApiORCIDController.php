@@ -41,6 +41,7 @@ class JsonApiORCIDController
 			],
 		]);
 		$response = $client->request("GET", "https://pub.orcid.org/v3.0/expanded-search/?q={$input}&start=0&rows=10");
+		//$response = $client->request("GET", "https://pub.sandbox.orcid.org/v3.0/expanded-search/?q={$input}&start=0&rows=10");
 		$result = $response->getBody()->getContents();
 		$decoded = json_decode($result, TRUE);
 
@@ -52,12 +53,12 @@ class JsonApiORCIDController
 			array_push($label, implode(", ", $child["email"]));
 
 			$results[] = [
-				"value" => $child["orcid-id"],
+				//"value" => $child["orcid-id"],
 				"label" => implode(" | ", array_filter($label)),
 				// pass the whole result, so other fields can be populated
 				// this is a stupid solution, but I could not come up with a better one
 				// and making another http request to orcid.org seems even more stupid
-				//"value" => json_encode($child),
+				"value" => json_encode($child),
 			];
 		}
 

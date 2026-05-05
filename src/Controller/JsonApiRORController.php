@@ -65,14 +65,17 @@ class JsonApiRORController
 			array_push($label, $child["locations"][0]["geonames_details"]["country_name"]);
 			array_push($label, $child["locations"][0]["geonames_details"]["name"]);
 
+			\Drupal::logger("ror")->error(print_r(json_encode($child, TRUE), TRUE));
+
 			$results[] = [
-				"value" => $child["id"],
+				//"value" => $child["id"],
+				"value" => json_encode($child),
 				"label" => implode(" | ", array_filter($label)),
 			];
 		}
 
 	} catch (ClientException $e) {
-		\Drupal::logger("orcid")->error(print_r($e, TRUE));
+		\Drupal::logger("ror")->error(print_r($e, TRUE));
 		return new JsonResponse($results);
 	}
 
