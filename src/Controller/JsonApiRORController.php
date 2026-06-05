@@ -65,8 +65,6 @@ class JsonApiRORController
 			array_push($label, $child["locations"][0]["geonames_details"]["country_name"]);
 			array_push($label, $child["locations"][0]["geonames_details"]["name"]);
 
-			\Drupal::logger("ror")->error(print_r(json_encode($child, TRUE), TRUE));
-
 			$results[] = [
 				//"value" => $child["id"],
 				"value" => json_encode($child),
